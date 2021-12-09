@@ -1,6 +1,9 @@
 <template>
-  <div class="container">
+  <div class="container" v-cloak>
+    <!-- v-cloak does not work for some reason link to notice [object Object] before the joke is loaded:
+    http://localhost:3000/jokes/0189hNRf2g -->
     <AppHeader />
+    <br />
     <nuxt />
   </div>
 </template>
@@ -39,5 +42,12 @@ ul {
   overflow: hidden;
   padding: 1rem 2rem;
   background: #fff;
+}
+
+[v-cloak] > * {
+  display: none;
+}
+[v-cloak]::before {
+  content: 'loading...';
 }
 </style>

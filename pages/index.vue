@@ -8,7 +8,7 @@
 export default {
   head() {
     return {
-      title: 'Welcome to dadjokes',
+      title: 'Welcome to dad jokes',
       meta: [
         {
           hid: 'description',
